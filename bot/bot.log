@@ -1,0 +1,10 @@
+2025-12-20 02:54:53,377 - __main__ - INFO - Bot sozlandi va tayyor!
+2025-12-20 02:54:53,377 - __main__ - INFO - Bot ishga tushmoqda...
+2025-12-20 02:54:53,377 - aiogram.dispatcher - INFO - Start polling
+2025-12-20 02:54:53,714 - aiogram.dispatcher - INFO - Run polling for bot @Kamunal_manitoring_bot id=8508409899 - 'Kamunal Bot'
+2025-12-20 02:55:17,518 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-12-20 02:55:17,518 - aiogram.dispatcher - WARNING - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8508409899)
+2025-12-20 02:55:22,746 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-12-20 02:55:22,746 - aiogram.dispatcher - WARNING - Sleep for 1.329049 seconds and try again... (tryings = 1, bot id = 8508409899)
+2025-12-20 02:55:28,468 - aiogram.dispatcher - ERROR - Failed to fetch updates - TelegramConflictError: Telegram server says - Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2025-12-20 02:55:28,468 - aiogram.dispatcher - WARNING - Sleep for 1.599962 seconds and try again... (tryings = 2, bot id = 8508409899)

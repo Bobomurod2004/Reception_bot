@@ -1,0 +1,54 @@
+# =============================================================================
+# TELEGRAM BOT KONFIGURATSIYASI
+# =============================================================================
+
+# Telegram Bot Token (BotFather dan olinadi)
+# Qanday olish: @BotFather ga /newbot yuboring va ko'rsatmalarga amal qiling
+BOT_TOKEN=1234567890:AAEhBOweik9ai2u5chjEMqDRNspnm4g4k
+
+# Django API URL (bot Django bilan bog'lanish uchun)
+DJANGO_API_URL=http://localhost:8000/api
+
+# API Token (Django va Bot o'rtasidagi xavfsizlik uchun)
+# Ixtiyoriy kuchli parol, masalan: my_secret_api_token_2024_xyz
+API_TOKEN=my_secret_api_token_2024
+
+# =============================================================================
+# SUPER ADMIN KONFIGURATSIYASI
+# =============================================================================
+
+# Super Admin Telegram ID-lari (vergul bilan ajratilgan)
+# O'zingizning Telegram ID ni @userinfobot dan oling
+# Misol: 123456789,987654321
+SUPER_ADMIN_IDS=123456789
+
+# =============================================================================
+# LOGGING KONFIGURATSIYASI
+# =============================================================================
+
+# Log darajasi: DEBUG, INFO, WARNING, ERROR, CRITICAL
+LOG_LEVEL=INFO
+
+# =============================================================================
+# DJANGO KONFIGURATSIYASI
+# =============================================================================
+
+# Django Secret Key (xavfsizlik uchun)
+# Yangi key yaratish: python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"
+SECRET_KEY=django-insecure-your-very-long-secret-key-here-change-in-production
+
+# Debug rejimi (production da False)
+DEBUG=True
+
+# Ruxsat berilgan hostlar
+ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0
+
+# =============================================================================
+# DATABASE KONFIGURATSIYASI
+# =============================================================================
+
+# PostgreSQL Database URL
+DATABASE_URL=postgresql://postgres:password@localhost:5432/support_bot_db
+
+# Yoki SQLite uchun (test uchun)
+# DATABASE_URL=sqlite:///db.sqlite3

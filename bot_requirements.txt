@@ -1,0 +1,16 @@
+# Telegram Bot requirements
+aiogram==3.23.0
+aiohttp==3.13.2
+aiofiles==25.1.0
+python-dotenv==1.2.1
+asyncio-throttle==1.0.2
+
+# System monitoring
+psutil==6.1.0
+
+# Logging va debugging
+colorlog==6.8.2
+
+# Optional: Redis uchun (production da)
+# redis==5.2.1
+# aioredis==2.0.1

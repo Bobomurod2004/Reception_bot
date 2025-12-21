@@ -1,0 +1,551 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: ru\n"
+
+msgid "welcome_user"
+msgstr "👋 Здравствуйте, {name}!\n\n🤖 Я бот поддержки, который поможет ответить на ваши вопросы.\n\n📝 Чтобы задать вопрос, нажмите \"Новый вопрос\"\n📋 Чтобы посмотреть ваши вопросы, нажмите \"Мои вопросы\"\n\nВыберите одну из кнопок ниже:"
+
+msgid "welcome_admin"
+msgstr "👨‍💼 Здравствуйте, Админ {name}!\n\nУ вас есть права администратора.\n\nВыберите одну из кнопок ниже:"
+
+msgid "welcome_super_admin"
+msgstr "👑 Здравствуйте, Супер Админ {name}!\n\nУ вас есть все права управления системой.\n\n🔧 Режим Супер Админа: /superadmin\n👨‍💼 Режим Админа: /admin\n👤 Режим Пользователя: Кнопки ниже"
+
+msgid "new_question"
+msgstr "📝 Новый вопрос"
+
+msgid "my_questions"
+msgstr "📋 Мои вопросы"
+
+msgid "help"
+msgstr "ℹ️ Помощь"
+
+msgid "select_category"
+msgstr "📁 Выберите категорию:"
+
+msgid "write_question"
+msgstr "💬 Напишите ваш вопрос:"
+
+msgid "cancel"
+msgstr "❌ Отмена"
+
+msgid "question_sent"
+msgstr "✅ Ваш вопрос отправлен! Ожидайте ответа администратора."
+
+msgid "no_open_tickets"
+msgstr "✅ Пока нет открытых вопросов."
+
+msgid "admin_my_tickets"
+msgstr "📋 Мои тикеты"
+
+msgid "admin_statistics"
+msgstr "📊 Статистика"
+
+msgid "admin_settings"
+msgstr "⚙️ Настройки"
+
+msgid "admin_user_mode"
+msgstr "👤 Режим пользователя"
+
+msgid "filter_today"
+msgstr "Сегодня"
+
+msgid "filter_yesterday"
+msgstr "Вчера"
+
+msgid "filter_old"
+msgstr "Старые"
+
+msgid "filter_pick_date"
+msgstr "Выбрать дату"
+
+msgid "admin_pick_date_prompt"
+msgstr "📅 Введите дату (например: 20.12.2025 или 20.12):"
+
+msgid "admin_invalid_date_format"
+msgstr "❌ Неверный формат даты. Введите в формате ДД.ММ.ГГГГ (например: 20.12.2025)."
+
+msgid "admin_no_tickets"
+msgstr "✅ Пока нет вопросов, назначенных вам.\n\nКогда появятся новые вопросы, вам будет отправлено уведомление."
+
+msgid "admin_all_done"
+msgstr "✅ Все вопросы решены!\n\nКогда появятся новые вопросы, вам будет отправлено уведомление."
+
+msgid "admin_reply_prompt"
+msgstr "💬 Напишите ваш ответ:"
+
+msgid "admin_ticket_closed"
+msgstr "✅ Тикет закрыт!"
+
+msgid "select_language"
+msgstr "🌐 Выберите язык / Select language / Tilni tanlang:"
+
+msgid "language_set"
+msgstr "✅ Язык изменен: {lang}"
+
+msgid "error_occurred"
+msgstr "❌ Произошла ошибка."
+
+msgid "try_start"
+msgstr "Попробуйте снова /start."
+
+msgid "language_button"
+msgstr "🌐 Язык / Language / Til"
+
+msgid "back"
+msgstr "🔙 Назад"
+
+msgid "back_to_menu"
+msgstr "🔙 Главное меню"
+
+msgid "refresh"
+msgstr "🔄 Обновить"
+
+msgid "reply"
+msgstr "💬 Ответить"
+
+msgid "close"
+msgstr "✅ Закрыть"
+
+msgid "in_progress"
+msgstr "🔄 В процессе"
+
+msgid "messages"
+msgstr "📋 Сообщения"
+
+msgid "admin_menu"
+msgstr "👨‍💼 Панель администратора\n\nВыберите одну из кнопок ниже:"
+
+msgid "super_admin_admins"
+msgstr "👥 Администраторы"
+
+msgid "super_admin_categories"
+msgstr "📂 Категории"
+
+msgid "super_admin_reports"
+msgstr "📊 Отчеты"
+
+msgid "super_admin_statistics"
+msgstr "📈 Статистика"
+
+msgid "super_admin_system"
+msgstr "🔧 Система"
+
+msgid "super_admin_settings"
+msgstr "⚙️ Настройки"
+
+msgid "super_admin_user_mode"
+msgstr "👤 Режим пользователя"
+
+msgid "super_admin_admin_mode"
+msgstr "👨‍💼 Режим администратора"
+
+msgid "admin_not_found"
+msgstr "❌ Профиль администратора не найден."
+
+msgid "admin_menu_text"
+msgstr "Выберите одну из кнопок ниже:"
+
+msgid "user_has_open_ticket"
+msgstr "❌ У вас все еще есть открытый тикет: #{ticket_number}\n📝 Тема: {title}\n📊 Статус: {status}\n\nℹ️ Чтобы отправить новый вопрос, вы должны дождаться закрытия текущего тикета или подождать 10 минут.\n⏳ Осталось: {minutes} мин"
+
+msgid "ticket_time_expired"
+msgstr "ℹ️ Since more than 10 minutes have passed since your last question or it was closed by the admin, you can ask a new question.\n\n📋 Старый тикет: {ticket_number}\nВы можете задать новый вопрос."
+
+msgid "no_categories"
+msgstr "❌ В данный момент категории недоступны.\n\nПопробуйте позже или свяжитесь с администратором."
+
+msgid "available_categories"
+msgstr "📂 Доступные категории:\n\n{categories}\nК какой категории относится ваш вопрос?\nВыберите соответствующую категорию:"
+
+msgid "category_selected_prompt"
+msgstr "Категория: {category}\n\nТеперь подробно опишите ваш вопрос:"
+
+msgid "write_question_prompt"
+msgstr "Напишите ваш вопрос (можете отправить текст, изображение, видео, аудио, файл или местоположение):"
+
+msgid "question_cancelled"
+msgstr "Создание вопроса отменено."
+
+msgid "content_type_not_supported"
+msgstr "Этот тип сообщения не поддерживается."
+
+msgid "question_accepted"
+msgstr "✅ Ваш вопрос принят!\n\n📋 Номер тикета: {ticket_number}\n📂 Категория: {category}\n⏳ Статус: Ожидание ответа администратора\n\nМы скоро ответим!"
+
+msgid "error_try_again"
+msgstr "Произошла ошибка. Попробуйте снова."
+
+msgid "admin_mode_only"
+msgstr "Вы администратор. Для использования функций администратора отправьте /admin."
+
+msgid "error_restart"
+msgstr "Произошла ошибка. Нажмите /start снова."
+
+msgid "no_questions_yet"
+msgstr "У вас пока нет вопросов.\nДля нового вопроса нажмите кнопку \"📝 Новый вопрос\"."
+
+msgid "your_questions"
+msgstr "Ваши вопросы:"
+
+msgid "ticket_not_found"
+msgstr "Тикет не найден!"
+
+msgid "ticket_status_open"
+msgstr "🟢 Открыт"
+
+msgid "ticket_status_waiting_admin"
+msgstr "🟡 Ожидание администратора"
+
+msgid "ticket_status_in_progress"
+msgstr "🔵 В процессе"
+
+msgid "ticket_status_closed"
+msgstr "🔴 Закрыт"
+
+msgid "ticket_priority_low"
+msgstr "🟢 Низкий"
+
+msgid "ticket_priority_medium"
+msgstr "🟡 Средний"
+
+msgid "ticket_priority_high"
+msgstr "🔴 Высокий"
+
+msgid "ticket_details"
+msgstr "📋 Тикет: {ticket_number}\n📝 Заголовок: {title}\n📊 Статус: {status}\n⚡ Приоритет: {priority}\n📅 Создан: {created}\n\n📄 Описание:\n{description}"
+
+msgid "help_text"
+msgstr "🤖 Помощь Support Bot\n\n📝 Новый вопрос - Создать новый тикет\n📋 Мои вопросы - Просмотреть существующие тикеты\nℹ️ Помощь - Это сообщение\n\n🔸 Поддерживаемые форматы:\n• Текстовые сообщения\n• Изображения\n• Видео файлы\n• Аудио файлы\n• Документы\n• Местоположение\n\n❓ Для дополнительной помощи свяжитесь с администратором."
+
+msgid "back_to_main_menu"
+msgstr "Главное меню:"
+
+msgid "select_button"
+msgstr "Выберите одну из кнопок ниже:"
+
+
+msgid "settings"
+msgstr "⚙️ Настройки"
+
+msgid "change_language"
+msgstr "🌐 Изменить язык"
+
+msgid "user_label"
+msgstr "👤 Пользователь"
+
+msgid "title_label"
+msgstr "📝 Заголовок"
+
+msgid "status_label"
+msgstr "📊 Статус"
+
+msgid "priority_label"
+msgstr "⚡ Приоритет"
+
+msgid "created_label"
+msgstr "📅 Создан"
+
+msgid "description_label"
+msgstr "📄 Описание"
+
+msgid "messages_label"
+msgstr "💬 Сообщения"
+
+msgid "stats_general"
+msgstr "👥 ОБЩАЯ ИНФОРМАЦИЯ"
+
+msgid "stats_total_users"
+msgstr "• Всего пользователей"
+
+msgid "stats_total_admins"
+msgstr "• Всего админов"
+
+msgid "stats_total_categories"
+msgstr "• Всего категорий"
+
+msgid "stats_total_tickets"
+msgstr "• Всего тикетов"
+
+msgid "stats_time_based"
+msgstr "📅 ПО ВРЕМЕНИ"
+
+msgid "stats_today"
+msgstr "• Сегодня"
+
+msgid "stats_this_week"
+msgstr "• На этой неделе"
+
+msgid "stats_this_month"
+msgstr "• В этом месяце"
+
+msgid "stats_by_status"
+msgstr "📊 ПО СТАТУСУ"
+
+msgid "stats_open"
+msgstr "• 🟢 Открыт"
+
+msgid "stats_waiting"
+msgstr "• 🟡 Ожидание"
+
+msgid "stats_in_progress"
+msgstr "• 🔵 В процессе"
+
+msgid "stats_closed"
+msgstr "• 🔴 Закрыт"
+
+msgid "stats_top_admins"
+msgstr "🏆 ТОП АДМИНЫ"
+
+msgid "stats_system_info"
+msgstr "🔧 СИСТЕМНАЯ ИНФОРМАЦИЯ"
+
+msgid "ticket_count"
+msgstr "шт."
+
+msgid "admin_stats_header"
+msgstr "📊 АДМИН СТАТИСТИКА"
+
+msgid "stats_yesterday"
+msgstr "• Вчера"
+
+msgid "stats_priority_header"
+msgstr "⚡ ПРИОРИТЕТ"
+
+msgid "stats_today_efficiency"
+msgstr "📅 Сегодня"
+
+msgid "category_label_header"
+msgstr "📂 КАТЕГОРИЯ:"
+
+msgid "no_admin_rights"
+msgstr "У вас нет прав администратора."
+
+msgid "admin_profile_not_found"
+msgstr "Профиль администратора не найден."
+
+msgid "all_questions_resolved"
+msgstr "✅ Все вопросы решены!"
+
+msgid "unknown"
+msgstr "Неизвестно"
+
+msgid "error_occurred_try_again"
+msgstr "Произошла ошибка. Попробуйте еще раз."
+
+msgid "blocked"
+msgstr "🔴 Заблокирован"
+
+msgid "active"
+msgstr "🟢 Активен"
+
+msgid "role"
+msgstr "🎭 Роль"
+
+msgid "admin_tickets"
+msgstr "📋 Тикеты"
+
+msgid "admins"
+msgstr "👥 Админы"
+
+msgid "no_admins_yet"
+msgstr "🚫 Пока нет админов."
+
+msgid "assign_admins_django"
+msgstr "Назначьте админов через Django admin панель:"
+
+msgid "no_categories_yet"
+msgstr "🚫 Пока нет категорий."
+
+msgid "create_categories_django"
+msgstr "Создайте категории через Django admin панель:"
+
+msgid "no_tickets_yet"
+msgstr "Пока нет тикетов."
+
+msgid "no_super_admin_rights"
+msgstr "У вас нет прав супер-администратора!"
+
+msgid "admin_not_found_short"
+msgstr "Админ не найден!"
+
+msgid "admin_blocked"
+msgstr "✅ Админ заблокирован!"
+
+msgid "admin_activated"
+msgstr "✅ Админ активирован!"
+
+msgid "category_created"
+msgstr "✅ Категория '%s' успешно создана!"
+
+msgid "category_creation_failed"
+msgstr "❌ Ошибка при создании категории!"
+
+msgid "category_name_required"
+msgstr "Название категории не может быть пустым!"
+
+msgid "enter_category_name"
+msgstr "Введите название категории:"
+
+msgid "category_creation_cancelled"
+msgstr "Создание категории отменено."
+
+msgid "server"
+msgstr "💻 СЕРВЕР"
+
+msgid "cpu"
+msgstr "• ЦПУ"
+
+msgid "ram"
+msgstr "• ОЗУ"
+
+msgid "disk"
+msgstr "• Диск"
+
+msgid "bot"
+msgstr "🤖 БОТ"
+
+msgid "status"
+msgstr "• Статус"
+
+msgid "uptime"
+msgstr "• Время работы"
+
+msgid "database"
+msgstr "🗄️ БАЗА ДАННЫХ"
+
+msgid "type"
+msgstr "• Тип"
+
+msgid "connected"
+msgstr "🟢 Подключено"
+
+msgid "api"
+msgstr " API"
+
+msgid "running"
+msgstr "🟢 Работает"
+
+msgid "admins_list"
+msgstr "👥 СПИСОК АДМИНОВ"
+
+msgid "categories_list"
+msgstr "📂 СПИСОК КАТЕГОРИЙ"
+
+msgid "super_admin_report"
+msgstr "📊 ОТЧЕТ СУПЕР АДМИНИСТРАТОРА"
+
+msgid "detailed_statistics"
+msgstr "📈 ПОДРОБНАЯ СТАТИСТИКА"
+
+msgid "system_info_title"
+msgstr "🔧 СИСТЕМНАЯ ИНФОРМАЦИЯ"
+
+msgid "admin_id"
+msgstr "🆔 ID"
+
+msgid "tickets_count"
+msgstr "📋 Тикеты"
+
+msgid "total"
+msgstr "📊 Всего"
+
+msgid "description_short"
+msgstr "💬"
+
+msgid "efficiency"
+msgstr "📈 ЭФФЕКТИВНОСТЬ"
+
+msgid "no_description"
+msgstr "Нет описания"
+
+msgid "admin_categories"
+msgstr "категории"
+
+msgid "category_by"
+msgstr "📂 ПО КАТЕГОРИИ"
+
+msgid "admin_by"
+msgstr "👥 ПО АДМИНАМ"
+
+msgid "yesterday"
+msgstr "• Вчера"
+
+msgid "settings_message"
+msgstr "Настройки"
+msgid "admin_reply_notification_header"
+msgstr "💬 Вам пришел ответ!"
+
+msgid "ticket_label"
+msgstr "📋 Тикет"
+
+msgid "subject_label"
+msgstr "📝 Тема"
+
+msgid "admin_reply_label"
+msgstr "👨‍💼 Ответ админа"
+
+msgid "admin_sent_image"
+msgstr "Админ отправил фото"
+
+msgid "admin_sent_video"
+msgstr "Админ отправил видео"
+
+msgid "admin_sent_audio"
+msgstr "Админ отправил аудио"
+
+msgid "admin_sent_voice"
+msgstr "Админ отправил голосовое сообщение"
+
+msgid "admin_sent_file"
+msgstr "Админ отправил файл"
+
+msgid "location_label"
+msgstr "Местоположение"
+
+msgid "admin_new_ticket_notification"
+msgstr "Поступил новый вопрос!"
+
+msgid "category_label"
+msgstr "Категория"
+
+msgid "question_label"
+msgstr "Вопрос"
+
+msgid "message_sent"
+msgstr "Сообщение отправлено"
+
+msgid "unsupported_message_type"
+msgstr "Этот тип сообщения не поддерживается."
+
+msgid "admin_replied_notification"
+msgstr "Админ ответил"
+msgid "admin_my_tickets_count"
+msgstr "📋 Ваши тикеты ({count} шт):"
+
+msgid "updated_success"
+msgstr "✅ Обновлено!"
+
+msgid "admin_menu_title"
+msgstr "👨‍💼 Панель администратора\n\nВыберите одну из кнопок ниже:"
+msgid "main_menu_header"
+msgstr "🏠 Главное меню"
+
+msgid "select_button_prompt"
+msgstr "Выберите одну из кнопок ниже:"
+
+msgid "ticket_not_assigned"
+msgstr "❌ Этот тикет не назначен вам!"
+
+msgid "ticket_in_progress"
+msgstr "✅ Тикет отмечен как в процессе!"
+
+msgid "ticket_closed_success"
+msgstr "✅ Тикет закрыт!"
+
+msgid "enter_closing_reason"
+msgstr "Введите причину закрытия тикета (необязательно):"
+
+msgid "enter_closing_reason_prompt"
+msgstr "Введите причину закрытия или оставьте пустым:"

@@ -1,0 +1,31 @@
+# TEST REJIMI UCHUN .env FAYL NAMUNASI
+# Bu faylni .env ga nusxalang va o'z ma'lumotlaringiz bilan to'ldiring
+
+# =============================================================================
+# TELEGRAM BOT SOZLAMALARI (MAJBURIY)
+# =============================================================================
+BOT_TOKEN=PASTE_YOUR_BOT_TOKEN_HERE
+DJANGO_API_URL=http://localhost:8000/api
+API_TOKEN=test_api_token_2024
+
+# =============================================================================
+# ADMIN SOZLAMALARI (MAJBURIY)
+# =============================================================================
+SUPER_ADMIN_IDS=PASTE_YOUR_TELEGRAM_ID_HERE
+
+# =============================================================================
+# DJANGO SOZLAMALARI
+# =============================================================================
+SECRET_KEY=django-insecure-test-key-change-this-in-production
+DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0
+
+# =============================================================================
+# DATABASE SOZLAMALARI (SQLite - test uchun)
+# =============================================================================
+USE_SQLITE=True
+
+# =============================================================================
+# LOGGING
+# =============================================================================
+LOG_LEVEL=INFO

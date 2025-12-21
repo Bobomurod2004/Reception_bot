@@ -1,0 +1,551 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: uz\n"
+
+msgid "welcome_user"
+msgstr "👋 Salom, {name}!\n\n🤖 Men sizning savollaringizga javob berishga yordam beradigan support botman.\n\n📝 Savol berish uchun \"Yangi savol\" tugmasini bosing\n📋 Mavjud savollaringizni ko'rish uchun \"Mening savollarim\" tugmasini bosing\n\nQuyidagi tugmalardan birini tanlang:"
+
+msgid "welcome_admin"
+msgstr "👨‍💼 Salom, Admin {name}!\n\nSizda admin huquqlari mavjud.\n\nQuyidagi tugmalardan birini tanlang:"
+
+msgid "welcome_super_admin"
+msgstr "👑 Salom, Super Admin {name}!\n\nSizda barcha tizim boshqaruv huquqlari mavjud.\n\n🔧 Super Admin rejimi: /superadmin\n👨‍💼 Admin rejimi: /admin\n👤 User rejimi: Quyidagi tugmalar"
+
+msgid "new_question"
+msgstr "📝 Yangi savol"
+
+msgid "my_questions"
+msgstr "📋 Mening savollarim"
+
+msgid "help"
+msgstr "ℹ️ Yordam"
+
+msgid "select_category"
+msgstr "📁 Kategoriyani tanlang:"
+
+msgid "write_question"
+msgstr "💬 Savolingizni yozing:"
+
+msgid "cancel"
+msgstr "❌ Bekor qilish"
+
+msgid "question_sent"
+msgstr "✅ Savolingiz yuborildi! Admin javobini kuting."
+
+msgid "no_open_tickets"
+msgstr "✅ Hozircha ochiq savollar yo'q."
+
+msgid "admin_my_tickets"
+msgstr "📋 Mening ticketlarim"
+
+msgid "admin_statistics"
+msgstr "📊 Statistika"
+
+msgid "admin_settings"
+msgstr "⚙️ Sozlamalar"
+
+msgid "admin_user_mode"
+msgstr "👤 User rejimi"
+
+msgid "filter_today"
+msgstr "Bugun"
+
+msgid "filter_yesterday"
+msgstr "Kecha"
+
+msgid "filter_old"
+msgstr "Eskilar"
+
+msgid "filter_pick_date"
+msgstr "Sana tanlash"
+
+msgid "admin_pick_date_prompt"
+msgstr "📅 Iltimos, sanani kiriting (masalan: 20.12.2025 yoki 20.12):"
+
+msgid "admin_invalid_date_format"
+msgstr "❌ Sana formati noto'g'ri. Iltimos, DD.MM.YYYY formatida kiriting (masalan: 20.12.2025)."
+
+msgid "admin_no_tickets"
+msgstr "✅ Hozircha sizga biriktirilgan savollar yo'q.\n\nYangi savollar kelganda sizga bildirishnoma yuboriladi."
+
+msgid "admin_all_done"
+msgstr "✅ Barcha savollar hal qilindi!\n\nYangi savollar kelganda sizga bildirishnoma yuboriladi."
+
+msgid "admin_reply_prompt"
+msgstr "💬 Javobingizni yozing:"
+
+msgid "admin_ticket_closed"
+msgstr "✅ Ticket yopildi!"
+
+msgid "select_language"
+msgstr "🌐 Tilni tanlang / Choose language / Выберите язык:"
+
+msgid "language_set"
+msgstr "✅ Til o'zgartirildi: {lang}"
+
+msgid "error_occurred"
+msgstr "❌ Xatolik yuz berdi."
+
+msgid "try_start"
+msgstr "Qaytadan /start bosing."
+
+msgid "language_button"
+msgstr "🌐 Til / Language / Язык"
+
+msgid "back"
+msgstr "🔙 Orqaga"
+
+msgid "back_to_menu"
+msgstr "🔙 Bosh menyu"
+
+msgid "refresh"
+msgstr "🔄 Yangilash"
+
+msgid "reply"
+msgstr "💬 Javob berish"
+
+msgid "close"
+msgstr "✅ Yopish"
+
+msgid "in_progress"
+msgstr "🔄 Jarayonda"
+
+msgid "messages"
+msgstr "📋 Xabarlar"
+
+msgid "admin_menu"
+msgstr "👨‍💼 Admin paneli\n\nQuyidagi tugmalardan birini tanlang:"
+
+msgid "super_admin_admins"
+msgstr "👥 Adminlar"
+
+msgid "super_admin_categories"
+msgstr "📂 Kategoriyalar"
+
+msgid "super_admin_reports"
+msgstr "📊 Hisobotlar"
+
+msgid "super_admin_statistics"
+msgstr "📈 Statistika"
+
+msgid "super_admin_system"
+msgstr "🔧 Tizim"
+
+msgid "super_admin_settings"
+msgstr "⚙️ Sozlamalar"
+
+msgid "super_admin_user_mode"
+msgstr "👤 User rejimi"
+
+msgid "super_admin_admin_mode"
+msgstr "👨‍💼 Admin rejimi"
+
+msgid "admin_not_found"
+msgstr "❌ Admin profili topilmadi."
+
+msgid "admin_menu_text"
+msgstr "Quyidagi tugmalardan birini tanlang:"
+
+msgid "user_has_open_ticket"
+msgstr "❌ Sizda hali ham ochiq ticket mavjud: #{ticket_number}\n📝 Sarlavha: {title}\n📊 Holat: {status}\n\nℹ️ Yangi savol yuborish uchun hozirgi ticket yopilishini yoki 10 minut o'tishini kutishingiz kerak.\n⏳ Qolgan vaqt: {minutes} minut"
+
+msgid "ticket_time_expired"
+msgstr "ℹ️ Oxirgi savolingizga 10 minutdan ortiq vaqt o'tdi yoki admin tomonidan yopilgan shuning uchun yangi savol berishingiz mumkin.\n\n📋 Eski ticket: {ticket_number}\nYangi savol yubora olasiz."
+
+msgid "no_categories"
+msgstr "❌ Hozirda kategoriyalar mavjud emas.\n\nIltimos, keyinroq urinib ko'ring yoki admin bilan bog'laning."
+
+msgid "available_categories"
+msgstr "📂 Mavjud kategoriyalar:\n\n{categories}\nSavolingiz qaysi kategoriyaga tegishli?\nTegishli kategoriyani tanlang:"
+
+msgid "category_selected_prompt"
+msgstr "Kategoriya: {category}\n\nEndi savolingizni batafsil yozing:"
+
+msgid "write_question_prompt"
+msgstr "Savolingizni yozing (matn, rasm, video, audio, fayl yoki joylashuv yuborishingiz mumkin):"
+
+msgid "question_cancelled"
+msgstr "Savol yaratish bekor qilindi."
+
+msgid "content_type_not_supported"
+msgstr "Bu turdagi xabar qo'llab-quvvatlanmaydi."
+
+msgid "question_accepted"
+msgstr "✅ Savolingiz qabul qilindi!\n\n📋 Ticket raqami: {ticket_number}\n📂 Kategoriya: {category}\n⏳ Holat: Admin javobini kutmoqda\n\nTez orada javob beramiz!"
+
+msgid "error_try_again"
+msgstr "Xatolik yuz berdi. Qaytadan urinib ko'ring."
+
+msgid "admin_mode_only"
+msgstr "Siz admin ekansiz. Admin funksiyalarini ishlatish uchun /admin yuboring."
+
+msgid "error_restart"
+msgstr "Xatolik yuz berdi. Qaytadan /start bosing."
+
+msgid "no_questions_yet"
+msgstr "Sizda hali savollar yo'q.\nYangi savol berish uchun \"📝 Yangi savol\" tugmasini bosing."
+
+msgid "your_questions"
+msgstr "Sizning savollaringiz:"
+
+msgid "ticket_not_found"
+msgstr "Ticket topilmadi!"
+
+msgid "ticket_status_open"
+msgstr "🟢 Ochiq"
+
+msgid "ticket_status_waiting_admin"
+msgstr "🟡 Admin kutilmoqda"
+
+msgid "ticket_status_in_progress"
+msgstr "🔵 Jarayonda"
+
+msgid "ticket_status_closed"
+msgstr "🔴 Yopiq"
+
+msgid "ticket_priority_low"
+msgstr "🟢 Past"
+
+msgid "ticket_priority_medium"
+msgstr "🟡 O'rta"
+
+msgid "ticket_priority_high"
+msgstr "🔴 Yuqori"
+
+msgid "ticket_details"
+msgstr "📋 Ticket: {ticket_number}\n📝 Sarlavha: {title}\n📊 Holat: {status}\n⚡ Muhimlik: {priority}\n📅 Yaratilgan: {created}\n\n📄 Tavsif:\n{description}"
+
+msgid "help_text"
+msgstr "🤖 Support Bot Yordam\n\n📝 Yangi savol - Yangi ticket yaratish\n📋 Mening savollarim - Mavjud ticketlarni ko'rish\nℹ️ Yordam - Bu xabar\n\n🔸 Qo'llab-quvvatlanadigan formatlar:\n• Matn xabarlari\n• Rasmlar\n• Video fayllar\n• Audio fayllar\n• Hujjatlar\n• Joylashuv\n\n❓ Qo'shimcha yordam kerak bo'lsa, admin bilan bog'laning."
+
+msgid "back_to_main_menu"
+msgstr "Bosh menyu:"
+
+msgid "select_button"
+msgstr "Quyidagi tugmalardan birini tanlang:"
+
+
+msgid "settings"
+msgstr "⚙️ Sozlamalar"
+
+msgid "change_language"
+msgstr "🌐 Tilni o'zgartirish"
+
+msgid "user_label"
+msgstr "👤 Foydalanuvchi"
+
+msgid "title_label"
+msgstr "📝 Sarlavha"
+
+msgid "status_label"
+msgstr "📊 Holat"
+
+msgid "priority_label"
+msgstr "⚡ Muhimlik"
+
+msgid "created_label"
+msgstr "📅 Yaratilgan"
+
+msgid "description_label"
+msgstr "📄 Tavsif"
+
+msgid "messages_label"
+msgstr "💬 Xabarlar"
+
+msgid "stats_general"
+msgstr "👥 UMUMIY MA'LUMOTLAR"
+
+msgid "stats_total_users"
+msgstr "• Jami foydalanuvchilar"
+
+msgid "stats_total_admins"
+msgstr "• Jami adminlar"
+
+msgid "stats_total_categories"
+msgstr "• Jami kategoriyalar"
+
+msgid "stats_total_tickets"
+msgstr "• Jami ticketlar"
+
+msgid "stats_time_based"
+msgstr "📅 VAQT BO'YICHA"
+
+msgid "stats_today"
+msgstr "• Bugun"
+
+msgid "stats_this_week"
+msgstr "• Bu hafta"
+
+msgid "stats_this_month"
+msgstr "• Bu oy"
+
+msgid "stats_by_status"
+msgstr "📊 STATUS BO'YICHA"
+
+msgid "stats_open"
+msgstr "• 🟢 Ochiq"
+
+msgid "stats_waiting"
+msgstr "• 🟡 Kutilmoqda"
+
+msgid "stats_in_progress"
+msgstr "• 🔵 Jarayonda"
+
+msgid "stats_closed"
+msgstr "• 🔴 Yopilgan"
+
+msgid "stats_top_admins"
+msgstr "🏆 TOP ADMINLAR"
+
+msgid "stats_system_info"
+msgstr "🔧 TIZIM MALUMOTLARI"
+
+msgid "ticket_count"
+msgstr "ta"
+
+msgid "admin_stats_header"
+msgstr "📊 ADMIN STATISTIKASI"
+
+msgid "stats_yesterday"
+msgstr "• Kecha"
+
+msgid "stats_priority_header"
+msgstr "⚡ PRIORITET"
+
+msgid "stats_today_efficiency"
+msgstr "📅 Bugungi"
+
+msgid "category_label_header"
+msgstr "📂 KATEGORIYA:"
+
+msgid "no_admin_rights"
+msgstr "Sizda admin huquqlari yo'q."
+
+msgid "admin_profile_not_found"
+msgstr "Admin profili topilmadi."
+
+msgid "all_questions_resolved"
+msgstr "✅ Barcha savollar hal qilindi!"
+
+msgid "unknown"
+msgstr "Noma'lum"
+
+msgid "error_occurred_try_again"
+msgstr "Xatolik yuz berdi. Qaytadan urinib ko'ring."
+
+msgid "blocked"
+msgstr "🔴 Bloklangan"
+
+msgid "active"
+msgstr "🟢 Faol"
+
+msgid "role"
+msgstr "🎭 Role"
+
+msgid "admin_tickets"
+msgstr "📋 Ticketlar"
+
+msgid "admins"
+msgstr "👥 Adminlar"
+
+msgid "no_admins_yet"
+msgstr "🚫 Hozirda adminlar yo'q."
+
+msgid "assign_admins_django"
+msgstr "Adminlarni Django admin panel orqali tayinlang:"
+
+msgid "no_categories_yet"
+msgstr "🚫 Hozirda kategoriyalar yo'q."
+
+msgid "create_categories_django"
+msgstr "Kategoriyalarni Django admin panel orqali yarating:"
+
+msgid "no_tickets_yet"
+msgstr "Hozirda ticketlar yo'q."
+
+msgid "no_super_admin_rights"
+msgstr "Sizda super admin huquqlari yo'q!"
+
+msgid "admin_not_found_short"
+msgstr "Admin topilmadi!"
+
+msgid "admin_blocked"
+msgstr "✅ Admin bloklandi!"
+
+msgid "admin_activated"
+msgstr "✅ Admin faollashtirildi!"
+
+msgid "category_created"
+msgstr "✅ Kategoriya '%s' muvaffaqiyatli yaratildi!"
+
+msgid "category_creation_failed"
+msgstr "❌ Kategoriya yaratishda xatolik yuz berdi!"
+
+msgid "category_name_required"
+msgstr "Kategoriya nomi bo'sh bo'lishi mumkin emas!"
+
+msgid "enter_category_name"
+msgstr "Kategoriya nomini kiriting:"
+
+msgid "category_creation_cancelled"
+msgstr "Kategoriya yaratish bekor qilindi."
+
+msgid "server"
+msgstr "💻 SERVER"
+
+msgid "cpu"
+msgstr "• CPU"
+
+msgid "ram"
+msgstr "• RAM"
+
+msgid "disk"
+msgstr "• Disk"
+
+msgid "bot"
+msgstr "🤖 BOT"
+
+msgid "status"
+msgstr "• Status"
+
+msgid "uptime"
+msgstr "• Uptime"
+
+msgid "database"
+msgstr "🗄️ DATABASE"
+
+msgid "type"
+msgstr "• Type"
+
+msgid "connected"
+msgstr "🟢 Ulangan"
+
+msgid "api"
+msgstr "🌐 API"
+
+msgid "running"
+msgstr "🟢 Ishlayapti"
+
+msgid "admins_list"
+msgstr "👥 ADMINLAR RO'YXATI"
+
+msgid "categories_list"
+msgstr "📂 KATEGORIYALAR RO'YXATI"
+
+msgid "super_admin_report"
+msgstr "📊 SUPER ADMIN HISOBOTI"
+
+msgid "detailed_statistics"
+msgstr "📈 BATAFSIL STATISTIKA"
+
+msgid "system_info_title"
+msgstr "🔧 TIZIM MA'LUMOTLARI"
+
+msgid "admin_id"
+msgstr "🆔 ID"
+
+msgid "tickets_count"
+msgstr "📋 Ticketlar"
+
+msgid "total"
+msgstr "📊 Jami"
+
+msgid "description_short"
+msgstr "💬"
+
+msgid "efficiency"
+msgstr "📈 SAMARADORLIK"
+
+msgid "no_description"
+msgstr "Tavsif yo'q"
+
+msgid "admin_categories"
+msgstr "kategoriyalar"
+
+msgid "category_by"
+msgstr "📂 KATEGORIYA BO'YICHA"
+
+msgid "admin_by"
+msgstr "👥 ADMIN BO'YICHA"
+
+msgid "yesterday"
+msgstr "• Kecha"
+
+msgid "settings_message"
+msgstr "Sozlamalar"
+msgid "admin_reply_notification_header"
+msgstr "💬 Sizga javob keldi!"
+
+msgid "ticket_label"
+msgstr "📋 Ticket"
+
+msgid "subject_label"
+msgstr "📝 Mavzu"
+
+msgid "admin_reply_label"
+msgstr "👨‍💼 Admin javobi"
+
+msgid "admin_sent_image"
+msgstr "Admin rasm yubordi"
+
+msgid "admin_sent_video"
+msgstr "Admin video yubordi"
+
+msgid "admin_sent_audio"
+msgstr "Admin audio yubordi"
+
+msgid "admin_sent_voice"
+msgstr "Admin ovozli xabar yubordi"
+
+msgid "admin_sent_file"
+msgstr "Admin fayl yubordi"
+
+msgid "location_label"
+msgstr "Joylashuv"
+
+msgid "admin_new_ticket_notification"
+msgstr "Yangi savol kelib tushdi!"
+
+msgid "category_label"
+msgstr "Kategoriya"
+
+msgid "question_label"
+msgstr "Savol"
+
+msgid "message_sent"
+msgstr "Xabar yuborildi"
+
+msgid "unsupported_message_type"
+msgstr "Bu turdagi xabar qo'llab-quvvatlanmaydi."
+
+msgid "admin_replied_notification"
+msgstr "Admin javob berdi"
+msgid "admin_my_tickets_count"
+msgstr "📋 Sizning ticketlaringiz ({count} ta):"
+
+msgid "updated_success"
+msgstr "✅ Yangilandi!"
+
+msgid "admin_menu_title"
+msgstr "👨‍💼 Admin paneli\n\nQuyidagi tugmalardan birini tanlang:"
+msgid "main_menu_header"
+msgstr "🏠 Bosh menyu"
+
+msgid "select_button_prompt"
+msgstr "Quyidagi tugmalardan birini tanlang:"
+
+msgid "ticket_not_assigned"
+msgstr "❌ Bu ticket sizga biriktirilmagan!"
+
+msgid "ticket_in_progress"
+msgstr "✅ Ticket jarayonda deb belgilandi!"
+
+msgid "ticket_closed_success"
+msgstr "✅ Ticket yopildi!"
+
+msgid "enter_closing_reason"
+msgstr "Ticket yopish sababini yozing (ixtiyoriy):"
+
+msgid "enter_closing_reason_prompt"
+msgstr "Yopish sababini yozing yoki bo'sh qoldiring:"

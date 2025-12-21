@@ -1,0 +1,40 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="certifi" />
+          <option value="charset-normalizer" />
+          <option value="coreapi" />
+          <option value="coreschema" />
+          <option value="django-rest-swagger" />
+          <option value="drf-yasg" />
+          <option value="idna" />
+          <option value="inflection" />
+          <option value="itypes" />
+          <option value="Jinja2" />
+          <option value="MarkupSafe" />
+          <option value="openapi-codec" />
+          <option value="packaging" />
+          <option value="pytz" />
+          <option value="PyYAML" />
+          <option value="requests" />
+          <option value="simplejson" />
+          <option value="uritemplate" />
+          <option value="urllib3" />
+          <option value="gunicorn" />
+          <option value="djangorestframework" />
+          <option value="tiktoken" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="users.*" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

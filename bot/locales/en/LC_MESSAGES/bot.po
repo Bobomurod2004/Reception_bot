@@ -1,0 +1,551 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: en\n"
+
+msgid "welcome_user"
+msgstr "👋 Hello, {name}!\n\n🤖 I am a support bot that will help answer your questions.\n\n📝 To ask a question, press \"New question\"\n📋 To view your questions, press \"My questions\"\n\nSelect one of the buttons below:"
+
+msgid "welcome_admin"
+msgstr "👨‍💼 Hello, Admin {name}!\n\nYou have administrator rights.\n\nSelect one of the buttons below:"
+
+msgid "welcome_super_admin"
+msgstr "👑 Hello, Super Admin {name}!\n\nYou have all system management rights.\n\n🔧 Super Admin mode: /superadmin\n👨‍💼 Admin mode: /admin\n👤 User mode: Buttons below"
+
+msgid "new_question"
+msgstr "📝 New question"
+
+msgid "my_questions"
+msgstr "📋 My questions"
+
+msgid "help"
+msgstr "ℹ️ Help"
+
+msgid "select_category"
+msgstr "📁 Select category:"
+
+msgid "write_question"
+msgstr "💬 Write your question:"
+
+msgid "cancel"
+msgstr "❌ Cancel"
+
+msgid "question_sent"
+msgstr "✅ Your question has been sent! Wait for admin response."
+
+msgid "no_open_tickets"
+msgstr "✅ No open questions yet."
+
+msgid "admin_my_tickets"
+msgstr "📋 My tickets"
+
+msgid "admin_statistics"
+msgstr "📊 Statistics"
+
+msgid "admin_settings"
+msgstr "⚙️ Settings"
+
+msgid "admin_user_mode"
+msgstr "👤 User mode"
+
+msgid "filter_today"
+msgstr "Today"
+
+msgid "filter_yesterday"
+msgstr "Yesterday"
+
+msgid "filter_old"
+msgstr "Older"
+
+msgid "filter_pick_date"
+msgstr "Pick date"
+
+msgid "admin_pick_date_prompt"
+msgstr "📅 Please enter the date (e.g., 20.12.2025 or 20.12):"
+
+msgid "admin_invalid_date_format"
+msgstr "❌ Invalid date format. Please use DD.MM.YYYY (e.g., 20.12.2025)."
+
+msgid "admin_no_tickets"
+msgstr "✅ No questions assigned to you yet.\n\nWhen new questions arrive, you will be notified."
+
+msgid "admin_all_done"
+msgstr "✅ All questions resolved!\n\nWhen new questions arrive, you will be notified."
+
+msgid "admin_reply_prompt"
+msgstr "💬 Write your reply:"
+
+msgid "admin_ticket_closed"
+msgstr "✅ Ticket closed!"
+
+msgid "select_language"
+msgstr "🌐 Select language / Выберите язык / Tilni tanlang:"
+
+msgid "language_set"
+msgstr "✅ Language changed: {lang}"
+
+msgid "error_occurred"
+msgstr "❌ An error occurred."
+
+msgid "try_start"
+msgstr "Try /start again."
+
+msgid "language_button"
+msgstr "🌐 Language / Язык / Til"
+
+msgid "back"
+msgstr "🔙 Back"
+
+msgid "back_to_menu"
+msgstr "🔙 Main menu"
+
+msgid "refresh"
+msgstr "🔄 Refresh"
+
+msgid "reply"
+msgstr "💬 Reply"
+
+msgid "close"
+msgstr "✅ Close"
+
+msgid "in_progress"
+msgstr "🔄 In progress"
+
+msgid "messages"
+msgstr "📋 Messages"
+
+msgid "admin_menu"
+msgstr "👨‍💼 Admin panel\n\nSelect one of the buttons below:"
+
+msgid "super_admin_admins"
+msgstr "👥 Admins"
+
+msgid "super_admin_categories"
+msgstr "📂 Categories"
+
+msgid "super_admin_reports"
+msgstr "📊 Reports"
+
+msgid "super_admin_statistics"
+msgstr "📈 Statistics"
+
+msgid "super_admin_system"
+msgstr "🔧 System"
+
+msgid "super_admin_settings"
+msgstr "⚙️ Settings"
+
+msgid "super_admin_user_mode"
+msgstr "👤 User mode"
+
+msgid "super_admin_admin_mode"
+msgstr "👨‍💼 Admin mode"
+
+msgid "admin_not_found"
+msgstr "❌ Admin profile not found."
+
+msgid "admin_menu_text"
+msgstr "Select one of the buttons below:"
+
+msgid "user_has_open_ticket"
+msgstr "❌ You still have an open ticket: #{ticket_number}\n📝 Title: {title}\n📊 Status: {status}\n\nℹ️ To send a new question, you must wait for the current ticket to be closed or wait 10 minutes.\n⏳ Remaining: {minutes} min"
+
+msgid "ticket_time_expired"
+msgstr "ℹ️ Since more than 10 minutes have passed since your last question or it was closed by the admin, you can ask a new question.\n\n📋 Old ticket: {ticket_number}\nYou can ask a new question."
+
+msgid "no_categories"
+msgstr "❌ Categories are currently unavailable.\n\nPlease try again later or contact an administrator."
+
+msgid "available_categories"
+msgstr "📂 Available categories:\n\n{categories}\nWhich category does your question belong to?\nSelect the appropriate category:"
+
+msgid "category_selected_prompt"
+msgstr "Category: {category}\n\nNow describe your question in detail:"
+
+msgid "write_question_prompt"
+msgstr "Write your question (you can send text, image, video, audio, file or location):"
+
+msgid "question_cancelled"
+msgstr "Question creation cancelled."
+
+msgid "content_type_not_supported"
+msgstr "This message type is not supported."
+
+msgid "question_accepted"
+msgstr "✅ Your question has been accepted!\n\n📋 Ticket number: {ticket_number}\n📂 Category: {category}\n⏳ Status: Waiting for admin response\n\nWe will respond soon!"
+
+msgid "error_try_again"
+msgstr "An error occurred. Please try again."
+
+msgid "admin_mode_only"
+msgstr "You are an admin. To use admin functions, send /admin."
+
+msgid "error_restart"
+msgstr "An error occurred. Please press /start again."
+
+msgid "no_questions_yet"
+msgstr "You don't have any questions yet.\nTo ask a new question, press the \"📝 New question\" button."
+
+msgid "your_questions"
+msgstr "Your questions:"
+
+msgid "ticket_not_found"
+msgstr "Ticket not found!"
+
+msgid "ticket_status_open"
+msgstr "🟢 Open"
+
+msgid "ticket_status_waiting_admin"
+msgstr "🟡 Waiting for admin"
+
+msgid "ticket_status_in_progress"
+msgstr "🔵 In progress"
+
+msgid "ticket_status_closed"
+msgstr "🔴 Closed"
+
+msgid "ticket_priority_low"
+msgstr "🟢 Low"
+
+msgid "ticket_priority_medium"
+msgstr "🟡 Medium"
+
+msgid "ticket_priority_high"
+msgstr "🔴 High"
+
+msgid "ticket_details"
+msgstr "📋 Ticket: {ticket_number}\n📝 Title: {title}\n📊 Status: {status}\n⚡ Priority: {priority}\n📅 Created: {created}\n\n📄 Description:\n{description}"
+
+msgid "help_text"
+msgstr "🤖 Support Bot Help\n\n📝 New question - Create new ticket\n📋 My questions - View existing tickets\nℹ️ Help - This message\n\n🔸 Supported formats:\n• Text messages\n• Images\n• Video files\n• Audio files\n• Documents\n• Location\n\n❓ For additional help, contact an administrator."
+
+msgid "back_to_main_menu"
+msgstr "Main menu:"
+
+msgid "select_button"
+msgstr "Select one of the buttons below:"
+
+
+msgid "settings"
+msgstr "⚙️ Settings"
+
+msgid "change_language"
+msgstr "🌐 Change Language"
+
+msgid "user_label"
+msgstr "👤 User"
+
+msgid "title_label"
+msgstr "📝 Title"
+
+msgid "status_label"
+msgstr "📊 Status"
+
+msgid "priority_label"
+msgstr "⚡ Priority"
+
+msgid "created_label"
+msgstr "📅 Created"
+
+msgid "description_label"
+msgstr "📄 Description"
+
+msgid "messages_label"
+msgstr "💬 Messages"
+
+msgid "stats_general"
+msgstr "👥 GENERAL INFORMATION"
+
+msgid "stats_total_users"
+msgstr "• Total users"
+
+msgid "stats_total_admins"
+msgstr "• Total admins"
+
+msgid "stats_total_categories"
+msgstr "• Total categories"
+
+msgid "stats_total_tickets"
+msgstr "• Total tickets"
+
+msgid "stats_time_based"
+msgstr "📅 TIME BASED"
+
+msgid "stats_today"
+msgstr "• Today"
+
+msgid "stats_this_week"
+msgstr "• This week"
+
+msgid "stats_this_month"
+msgstr "• This month"
+
+msgid "stats_by_status"
+msgstr "📊 BY STATUS"
+
+msgid "stats_open"
+msgstr "• 🟢 Open"
+
+msgid "stats_waiting"
+msgstr "• 🟡 Waiting"
+
+msgid "stats_in_progress"
+msgstr "• 🔵 In progress"
+
+msgid "stats_closed"
+msgstr "• 🔴 Closed"
+
+msgid "stats_top_admins"
+msgstr "🏆 TOP ADMINS"
+
+msgid "stats_system_info"
+msgstr "🔧 SYSTEM INFO"
+
+msgid "ticket_count"
+msgstr "tickets"
+
+msgid "admin_stats_header"
+msgstr "📊 ADMIN STATISTICS"
+
+msgid "stats_yesterday"
+msgstr "• Yesterday"
+
+msgid "stats_priority_header"
+msgstr "⚡ PRIORITY"
+
+msgid "stats_today_efficiency"
+msgstr "📅 Today"
+
+msgid "category_label_header"
+msgstr "📂 CATEGORY:"
+
+msgid "no_admin_rights"
+msgstr "You don't have admin rights."
+
+msgid "admin_profile_not_found"
+msgstr "Admin profile not found."
+
+msgid "all_questions_resolved"
+msgstr "✅ All questions resolved!"
+
+msgid "unknown"
+msgstr "Unknown"
+
+msgid "error_occurred_try_again"
+msgstr "An error occurred. Please try again."
+
+msgid "blocked"
+msgstr "🔴 Blocked"
+
+msgid "active"
+msgstr "🟢 Active"
+
+msgid "role"
+msgstr "🎭 Role"
+
+msgid "admin_tickets"
+msgstr "📋 Tickets"
+
+msgid "admins"
+msgstr "👥 Admins"
+
+msgid "no_admins_yet"
+msgstr "🚫 No admins yet."
+
+msgid "assign_admins_django"
+msgstr "Assign admins via Django admin panel:"
+
+msgid "no_categories_yet"
+msgstr "🚫 No categories yet."
+
+msgid "create_categories_django"
+msgstr "Create categories via Django admin panel:"
+
+msgid "no_tickets_yet"
+msgstr "No tickets yet."
+
+msgid "no_super_admin_rights"
+msgstr "You don't have super admin rights!"
+
+msgid "admin_not_found_short"
+msgstr "Admin not found!"
+
+msgid "admin_blocked"
+msgstr "✅ Admin blocked!"
+
+msgid "admin_activated"
+msgstr "✅ Admin activated!"
+
+msgid "category_created"
+msgstr "✅ Category '%s' created successfully!"
+
+msgid "category_creation_failed"
+msgstr "❌ Error creating category!"
+
+msgid "category_name_required"
+msgstr "Category name cannot be empty!"
+
+msgid "enter_category_name"
+msgstr "Enter category name:"
+
+msgid "category_creation_cancelled"
+msgstr "Category creation cancelled."
+
+msgid "server"
+msgstr "💻 SERVER"
+
+msgid "cpu"
+msgstr "• CPU"
+
+msgid "ram"
+msgstr "• RAM"
+
+msgid "disk"
+msgstr "• Disk"
+
+msgid "bot"
+msgstr "🤖 BOT"
+
+msgid "status"
+msgstr "• Status"
+
+msgid "uptime"
+msgstr "• Uptime"
+
+msgid "database"
+msgstr "🗄️ DATABASE"
+
+msgid "type"
+msgstr "• Type"
+
+msgid "connected"
+msgstr "🟢 Connected"
+
+msgid "api"
+msgstr "🌐 API"
+
+msgid "running"
+msgstr "🟢 Running"
+
+msgid "admins_list"
+msgstr "👥 ADMINS LIST"
+
+msgid "categories_list"
+msgstr "📂 CATEGORIES LIST"
+
+msgid "super_admin_report"
+msgstr "📊 SUPER ADMIN REPORT"
+
+msgid "detailed_statistics"
+msgstr "📈 DETAILED STATISTICS"
+
+msgid "system_info_title"
+msgstr "🔧 SYSTEM INFORMATION"
+
+msgid "admin_id"
+msgstr "🆔 ID"
+
+msgid "tickets_count"
+msgstr "📋 Tickets"
+
+msgid "total"
+msgstr "📊 Total"
+
+msgid "description_short"
+msgstr "💬"
+
+msgid "efficiency"
+msgstr "📈 EFFICIENCY"
+
+msgid "no_description"
+msgstr "No description"
+
+msgid "admin_categories"
+msgstr "categories"
+
+msgid "category_by"
+msgstr "📂 BY CATEGORY"
+
+msgid "admin_by"
+msgstr "👥 BY ADMIN"
+
+msgid "yesterday"
+msgstr "• Yesterday"
+
+msgid "settings_message"
+msgstr "Settings"
+msgid "admin_reply_notification_header"
+msgstr "💬 You've received a reply!"
+
+msgid "ticket_label"
+msgstr "📋 Ticket"
+
+msgid "subject_label"
+msgstr "📝 Subject"
+
+msgid "admin_reply_label"
+msgstr "👨‍💼 Admin reply"
+
+msgid "admin_sent_image"
+msgstr "Admin sent an image"
+
+msgid "admin_sent_video"
+msgstr "Admin sent a video"
+
+msgid "admin_sent_audio"
+msgstr "Admin sent an audio"
+
+msgid "admin_sent_voice"
+msgstr "Admin sent a voice message"
+
+msgid "admin_sent_file"
+msgstr "Admin sent a file"
+
+msgid "location_label"
+msgstr "Location"
+
+msgid "admin_new_ticket_notification"
+msgstr "A new question has arrived!"
+
+msgid "category_label"
+msgstr "Category"
+
+msgid "question_label"
+msgstr "Question"
+
+msgid "message_sent"
+msgstr "Message sent"
+
+msgid "unsupported_message_type"
+msgstr "This message type is not supported."
+
+msgid "admin_replied_notification"
+msgstr "Admin replied"
+msgid "admin_my_tickets_count"
+msgstr "📋 Your tickets ({count}):"
+
+msgid "updated_success"
+msgstr "✅ Updated!"
+
+msgid "admin_menu_title"
+msgstr "👨‍💼 Admin panel\n\nSelect one of the buttons below:"
+msgid "main_menu_header"
+msgstr "🏠 Main menu"
+
+msgid "select_button_prompt"
+msgstr "Select one of the buttons below:"
+
+msgid "ticket_not_assigned"
+msgstr "❌ This ticket is not assigned to you!"
+
+msgid "ticket_in_progress"
+msgstr "✅ Ticket marked as in progress!"
+
+msgid "ticket_closed_success"
+msgstr "✅ Ticket closed!"
+
+msgid "enter_closing_reason"
+msgstr "Enter closing reason (optional):"
+
+msgid "enter_closing_reason_prompt"
+msgstr "Type the closing reason or leave it empty:"
