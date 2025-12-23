@@ -6,13 +6,16 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from config import DJANGO_API_URL, API_TOKEN
+from config import (
+    DJANGO_API_URL, API_TOKEN, API_TIMEOUT, 
+    API_MAX_RETRIES, API_RETRY_DELAY
+)
 
 logger = logging.getLogger(__name__)
 
 
 class DjangoAPIClient:
-    """Django backend bilan bog'lanish uchun API client"""
+    """Django backend bilan bog'lanish uchun API client (optimized with session reuse)"""
     
     def __init__(self):
         self.base_url = DJANGO_API_URL
@@ -20,6 +23,41 @@ class DjangoAPIClient:
             'Content-Type': 'application/json',
             'Authorization': f'Bearer {API_TOKEN}'
         }
+        self._session: Optional[aiohttp.ClientSession] = None
+        self._timeout = aiohttp.ClientTimeout(total=API_TIMEOUT)
+        self._connector: Optional[aiohttp.TCPConnector] = None
+    
+    def _get_connector(self) -> aiohttp.TCPConnector:
+        """Get or create TCPConnector (lazy initialization to avoid event loop issues)"""
+        if self._connector is None or self._connector.closed:
+            self._connector = aiohttp.TCPConnector(
+                limit=100,  # Max connections
+                limit_per_host=30,  # Max connections per host
+                ttl_dns_cache=300,  # DNS cache TTL
+                force_close=False,  # Reuse connections
+            )
+        return self._connector
+    
+    async def _get_session(self) -> aiohttp.ClientSession:
+        """Get or create aiohttp session (reused for all requests)"""
+        if self._session is None or self._session.closed:
+            connector = self._get_connector()
+            self._session = aiohttp.ClientSession(
+                headers=self.headers,
+                timeout=self._timeout,
+                connector=connector,
+                json_serialize=lambda x: __import__('json').dumps(x, ensure_ascii=False)
+            )
+        return self._session
+    
+    async def close(self):
+        """Close the session and connector (call on shutdown)"""
+        if self._session and not self._session.closed:
+            await self._session.close()
+            logger.info("API client session closed")
+        if self._connector and not self._connector.closed:
+            await self._connector.close()
+            logger.info("API client connector closed")
     
     async def _make_request(
         self, 
@@ -27,23 +65,24 @@ class DjangoAPIClient:
         endpoint: str, 
         data: Optional[Dict] = None,
         params: Optional[Dict] = None,
-        max_retries: int = 3,
-        retry_delay: float = 1.0
+        max_retries: int = None,
+        retry_delay: float = None
     ) -> Optional[Dict]:
-        """HTTP so'rov yuborish (retry strategy bilan)"""
+        """HTTP so'rov yuborish (retry strategy bilan, optimized session reuse)"""
         url = f"{self.base_url}/{endpoint.lstrip('/')}"
+        max_retries = max_retries or API_MAX_RETRIES
+        retry_delay = retry_delay or API_RETRY_DELAY
         
         for attempt in range(max_retries):
             try:
-                async with aiohttp.ClientSession() as session:
-                    async with session.request(
-                        method=method,
-                        url=url,
-                        json=data,
-                        params=params,
-                        headers=self.headers,
-                        timeout=aiohttp.ClientTimeout(total=30)
-                    ) as response:
+                session = await self._get_session()
+                async with session.request(
+                    method=method,
+                    url=url,
+                    json=data,
+                    params=params,
+                    headers=self.headers,
+                ) as response:
                         if response.status == 204:  # No Content
                             return {}
                         

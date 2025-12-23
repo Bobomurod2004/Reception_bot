@@ -1,0 +1,83 @@
+╔══════════════════════════════════════════════════════════════╗
+║  SERVERGA JOYLASHTIRISH - QISQA QO'LLANMA                    ║
+╚══════════════════════════════════════════════════════════════╝
+
+1. .env FAYLNI TO'LDIRISH (MAJBURIY):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BOT_MODE=webhook
+WEBHOOK_HOST=https://yourdomain.com
+WEBHOOK_PATH=/webhook
+WEBHOOK_SECRET=random_secure_string
+WEBHOOK_PORT=8443
+
+DJANGO_API_URL=http://web:8000/api
+USE_SQLITE=False
+DB_NAME=support_bot_db
+DB_USER=postgres
+DB_PASSWORD=your_strong_password
+DB_HOST=db
+
+DEBUG=False
+BOT_TOKEN=your_token
+SUPER_ADMIN_IDS=your_id
+API_TOKEN=your_api_token
+SECRET_KEY=your_secret_key
+
+
+2. SSL SERTIFIKAT (MAJBURIY - Webhook uchun):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+sudo apt install certbot
+sudo certbot certonly --standalone -d yourdomain.com
+
+
+3. NGINX KONFIGURATSIYASI (Tavsiya etiladi):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+/etc/nginx/sites-available/bot.conf:
+
+server {
+    listen 443 ssl;
+    server_name yourdomain.com;
+    
+    ssl_certificate /etc/letsencrypt/live/yourdomain.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/yourdomain.com/privkey.pem;
+    
+    location /webhook {
+        proxy_pass http://localhost:8443;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
+
+sudo ln -s /etc/nginx/sites-available/bot.conf /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl reload nginx
+
+
+4. DOCKER DEPLOYMENT:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+docker-compose build
+docker-compose up -d
+docker-compose logs -f bot
+
+
+5. FIREWALL:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw allow 8443/tcp
+
+
+6. TEKSHIRISH:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+curl http://localhost:8000/health/
+curl http://localhost:8443/health
+docker-compose logs bot | grep webhook
+
+
+⚠️  MUHIM:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- Webhook faqat HTTPS orqali ishlaydi
+- Domain va SSL sertifikat kerak
+- BOT_MODE=webhook bo'lishi kerak
+- PostgreSQL ishlashi kerak (SQLite emas)
+- DEBUG=False (production)

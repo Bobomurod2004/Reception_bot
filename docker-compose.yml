@@ -1,43 +1,96 @@
+version: '3.8'
+
 services:
   db:
     image: postgres:15-alpine
+    container_name: support_bot_db
+    restart: unless-stopped
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
       - POSTGRES_DB=${DB_NAME:-support_bot_db}
       - POSTGRES_USER=${DB_USER:-postgres}
       - POSTGRES_PASSWORD=${DB_PASSWORD:-password}
+      - POSTGRES_INITDB_ARGS=--encoding=UTF8
     ports:
-      - "5433:5432"
+      - "${DB_PORT:-5432}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-postgres}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - bot_network
 
   web:
     build: .
+    container_name: support_bot_web
+    restart: unless-stopped
     command: /app/scripts/entrypoint.sh
     volumes:
       - .:/app
+      - static_volume:/app/staticfiles
+      - media_volume:/app/media
+      - logs_volume:/app/logs
     ports:
-      - "8000:8000"
+      - "${WEB_PORT:-8000}:8000"
     env_file:
       - .env
     environment:
       - DB_HOST=db
       - DB_PORT=5432
     depends_on:
-      - db
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - bot_network
 
   bot:
     build: .
+    container_name: support_bot_telegram
+    restart: unless-stopped
     command: /app/scripts/bot_entrypoint.sh
     volumes:
       - .:/app
+      - logs_volume:/app/logs
+    ports:
+      - "${WEBHOOK_PORT:-8443}:8443"
     env_file:
       - .env
     environment:
       - DB_HOST=db
       - DB_PORT=5432
+      - DJANGO_API_URL=http://web:8000/api
     depends_on:
-      - db
-      - web
+      db:
+        condition: service_healthy
+      web:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8443/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+    networks:
+      - bot_network
 
 volumes:
   postgres_data:
+    driver: local
+  static_volume:
+    driver: local
+  media_volume:
+    driver: local
+  logs_volume:
+    driver: local
+
+networks:
+  bot_network:
+    driver: bridge

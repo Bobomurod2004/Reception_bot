@@ -1,19 +1,23 @@
 # 🤖 Telegram Support Bot + Django Backend
 
-Professional support-ticket tizimi - Telegram bot orqali foydalanuvchilar savol yuboradi, adminlar kategoriya bo'yicha javob beradi, super admin esa barcha jarayonni boshqaradi.
+Production-ready support-ticket system - Telegram bot orqali foydalanuvchilar savol yuboradi, adminlar kategoriya bo'yicha javob beradi, super admin esa barcha jarayonni boshqaradi.
 
-## 🏗️ Arxitektura
+## 🏗️ Architecture
 
 ```
-Telegram User/Admin → Aiogram Bot → Django REST API → PostgreSQL
+Telegram User/Admin → Aiogram Bot (Webhook) → Django REST API → PostgreSQL
 ```
 
-**Asosiy prinsip:**
-- Telegram Bot → faqat UI
-- Django → business logic + DB + API  
-- Bot va Django → faqat REST API orqali bog'lanadi
+**Key Features:**
+- ✅ **Webhook mode** (production-ready, no polling)
+- ✅ **Fully async** (no blocking operations)
+- ✅ **PostgreSQL** database (production)
+- ✅ **Docker & docker-compose** deployment
+- ✅ **Proper logging** with rotation
+- ✅ **Optimized API client** with session reuse
+- ✅ **Health checks** for monitoring
 
-## 👥 Rollar
+## 👥 Roles
 
 ### 👤 User
 - Botni ishga tushiradi
@@ -34,197 +38,157 @@ Telegram User/Admin → Aiogram Bot → Django REST API → PostgreSQL
 - Hisobotlarni ko'radi
 - Tizimni to'liq boshqaradi
 
-## 🚀 O'rnatish
+## 🚀 Quick Start
 
-### 1. Django Backend
-
-```bash
-# Virtual environment yaratish
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# yoki
-venv\Scripts\activate  # Windows
-
-# Dependencies o'rnatish
-pip install -r req.txt
-
-# Database migratsiyalari
-python manage.py makemigrations
-python manage.py migrate
-
-# Super user yaratish
-python manage.py createsuperuser
-
-# Serverni ishga tushirish
-python manage.py runserver
-```
-
-### 2. Telegram Bot
+### Local Testing (SQLite, Polling)
 
 ```bash
-# Bot dependencies o'rnatish
-pip install -r bot_requirements.txt
+# 1. Clone repository
+git clone https://github.com/Bobomurod2004/Reception_bot.git
+cd Reception_bot
 
-# .env fayl yaratish
-cp .env.example .env
-# .env faylni to'ldiring
+# 2. Create .env file
+cp env_example.txt .env
+# Edit .env and set BOT_TOKEN and SUPER_ADMIN_IDS
 
-# Botni ishga tushirish
-cd bot
-python bot.py
+# 3. Run test script
+chmod +x test_local.sh
+./test_local.sh
 ```
 
-## ⚙️ Konfiguratsiya
+### Production Deployment (Docker, PostgreSQL, Webhook)
 
-### .env fayl:
+```bash
+# 1. Configure .env
+cp env_example.txt .env
+# Edit .env:
+#   - Set BOT_TOKEN
+#   - Set SUPER_ADMIN_IDS
+#   - Set BOT_MODE=webhook
+#   - Set WEBHOOK_HOST=https://yourdomain.com
+#   - Set WEBHOOK_SECRET (random secure string)
+#   - Configure database credentials
 
-```env
-# Bot konfiguratsiyasi
-BOT_TOKEN=your_telegram_bot_token_here
-DJANGO_API_URL=http://localhost:8000/api
-API_TOKEN=your_api_token_here
-
-# Super admin Telegram ID-lari
-SUPER_ADMIN_IDS=123456789,987654321
-
-# Logging
-LOG_LEVEL=INFO
-
-# Database
-DATABASE_URL=postgresql://username:password@localhost:5432/database_name
+# 2. Deploy
+chmod +x deploy_production.sh
+./deploy_production.sh
 ```
 
-## 📊 API Endpoint-lar
+## ⚙️ Configuration
 
-### User API
-- `GET /api/user/users/` - User list
-- `POST /api/user/users/` - User yaratish
-- `GET /api/user/users/{id}/` - User olish
+### Environment Variables (.env)
 
-### Ticket API
-- `GET /api/ticket/tickets/` - Ticket list
-- `POST /api/ticket/tickets/` - Ticket yaratish
-- `GET /api/ticket/tickets/my-tickets/?admin_id=1` - Admin ticketlari
-- `GET /api/ticket/tickets/user-tickets/?user_id=1` - User ticketlari
-- `POST /api/ticket/tickets/{id}/assign-admin/` - Admin biriktirish
-- `POST /api/ticket/tickets/{id}/close/` - Ticket yopish
+**Required:**
+- `BOT_TOKEN` - Telegram bot token from @BotFather
+- `SUPER_ADMIN_IDS` - Comma-separated Telegram user IDs
+- `API_TOKEN` - Secret token for bot-API communication
+- `SECRET_KEY` - Django secret key
 
-### Message API
-- `GET /api/ticket/messages/` - Message list
-- `POST /api/ticket/messages/` - Message yaratish
+**Bot Mode:**
+- `BOT_MODE=polling` - For local development
+- `BOT_MODE=webhook` - For production (requires WEBHOOK_HOST)
 
-### Admin API
-- `GET /api/admin/admins/` - Admin list
-- `POST /api/admin/admins/` - Admin yaratish
-- `GET /api/admin/categories/` - Category list
-- `POST /api/admin/categories/` - Category yaratish
+**Webhook (Production):**
+- `WEBHOOK_HOST=https://yourdomain.com`
+- `WEBHOOK_PATH=/webhook`
+- `WEBHOOK_SECRET=your_secret_token`
+- `WEBHOOK_PORT=8443`
 
-## 🔄 User Flow
+**Database:**
+- `DB_NAME`, `DB_USER`, `DB_PASSWORD`, `DB_HOST`, `DB_PORT`
+- Or set `USE_SQLITE=True` for local testing
 
-1. `/start` - Bot ishga tushadi
-2. Kategoriya tanlash
-3. Ochiq ticket bormi tekshirish (API)
-4. Savol yozish
-5. Ticket yaratildi
-6. Admin javobi
+See `env_example.txt` for all options.
 
-## 🔄 Admin Flow
+## 🐳 Docker Deployment
 
-1. `/admin` - Admin rejimi
-2. Mening ticketlarim
-3. Ticket tanlash  
-4. Javob yozish
-5. Userga yuborildi
+### Services
 
-## 📎 Media Qo'llab-quvvatlash
+- **db** - PostgreSQL database
+- **web** - Django REST API (Gunicorn)
+- **bot** - Telegram bot (Webhook/Polling)
 
-- ✅ Text
-- ✅ Image  
-- ✅ Video
-- ✅ Audio
-- ✅ File (PDF va boshqalar)
-- ✅ Location
+### Commands
 
-## 🔐 Xavfsizlik
+```bash
+# Build and start
+docker-compose up -d
 
-- Bot → Django: API Token
-- User identifikatsiyasi: Telegram ID
-- Admin role: Django orqali
-- Permissionlar faqat backendda
+# View logs
+docker-compose logs -f
 
-## 📈 Xususiyatlar
+# Stop
+docker-compose down
 
-### ✅ Tayyor
-- Django REST API
-- Admin assign logikasi
-- Telegram Bot (User, Admin, Super Admin)
-- FSM (Finite State Machine)
-- Keyboard-lar
-- Middleware (Auth)
-- API Client service
+# Restart
+docker-compose restart
 
-### 🔄 Keyingi bosqichlar
-- Media file handling
-- Audit va loglar
-- Hisobotlar
-- Production deployment
-- Redis cache
-- Webhook mode
-
-## 🗂️ Fayl Strukturasi
-
-```
-Django-Bot/
-├── apps/
-│   ├── admin/          # Admin modeli va API
-│   ├── ticket/         # Ticket va Message modellari
-│   └── user/           # User modeli
-├── bot/
-│   ├── config.py       # Bot konfiguratsiyasi
-│   ├── bot.py          # Asosiy bot fayli
-│   ├── services/
-│   │   └── api.py      # Django API client
-│   ├── routers/
-│   │   ├── user.py     # User handlers
-│   │   ├── admin.py    # Admin handlers
-│   │   └── super_admin.py # Super admin handlers
-│   ├── keyboards/
-│   │   ├── user.py     # User keyboards
-│   │   └── admin.py    # Admin keyboards
-│   ├── fsm/
-│   │   └── states.py   # FSM states
-│   └── middlewares/
-│       └── auth.py     # Auth middleware
-├── core/               # Django settings
-├── manage.py
-├── req.txt            # Django requirements
-└── bot_requirements.txt # Bot requirements
+# Rebuild
+docker-compose build --no-cache
 ```
 
-## 🚀 Production
+## 📊 API Endpoints
 
-### Docker (kelgusida)
-```dockerfile
-# Django
-FROM python:3.11-slim
-# Bot
-FROM python:3.11-slim
+- `GET /health/` - Health check
+- `GET /admin/` - Django admin panel
+- `GET /api/user/users/` - User API
+- `GET /api/admin/` - Admin API
+- `GET /api/ticket/` - Ticket API
+
+## 🔧 Development
+
+### Project Structure
+
+```
+.
+├── bot/              # Telegram bot (Aiogram)
+│   ├── bot.py        # Main bot entry point
+│   ├── webhook.py    # Webhook setup
+│   ├── routers/      # Bot handlers
+│   ├── services/     # API client
+│   └── middlewares/  # Auth, i18n
+├── apps/             # Django apps
+│   ├── user/        # User management
+│   ├── admin/       # Admin management
+│   └── ticket/      # Ticket system
+├── core/            # Django settings
+├── docker-compose.yml
+├── Dockerfile
+└── requirements.txt
 ```
 
-### Nginx + Gunicorn
-```nginx
-server {
-    listen 80;
-    location /api/ {
-        proxy_pass http://127.0.0.1:8000;
-    }
-}
-```
+### Key Improvements
 
-## 📞 Qo'llab-quvvatlash
+1. **Webhook instead of Polling** - Production-ready, scalable
+2. **Optimized API Client** - Reuses aiohttp session, connection pooling
+3. **Proper Logging** - File rotation, structured logs
+4. **PostgreSQL** - Production database
+5. **Health Checks** - Docker health monitoring
+6. **Error Handling** - Retry logic, timeouts
+7. **No Blocking** - Fully async operations
 
-Savollar bo'lsa, issue yarating yoki bog'laning.
+## 🐛 Troubleshooting
 
----
+### Bot not responding
+- Check logs: `docker-compose logs bot`
+- Verify BOT_TOKEN in .env
+- Check webhook URL (if webhook mode)
 
-**Status: ✅ TAYYOR - Production uchun**
+### Database connection errors
+- Verify DB credentials in .env
+- Check if PostgreSQL is running: `docker-compose ps db`
+- Check connection: `docker-compose exec db pg_isready`
+
+### API connection errors
+- Verify DJANGO_API_URL in .env
+- Check web service: `docker-compose logs web`
+- Test health endpoint: `curl http://localhost:8000/health/`
+
+## 📝 License
+
+MIT License
+
+## 🔗 Links
+
+- Repository: https://github.com/Bobomurod2004/Reception_bot
+- Django Admin: http://localhost:8000/admin/ (after deployment)

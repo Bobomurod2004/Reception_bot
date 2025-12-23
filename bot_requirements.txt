@@ -11,6 +11,6 @@ psutil==6.1.0
 # Logging va debugging
 colorlog==6.8.2
 
-# Optional: Redis uchun (production da)
+# Optional: Redis uchun (production da, FSM storage uchun)
 # redis==5.2.1
 # aioredis==2.0.1

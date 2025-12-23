@@ -1,0 +1,51 @@
+INFO Watching for file changes with StatReloader
+INFO "GET /api/user/users/?telegram_id=5652442685 HTTP/1.1" 200 295
+INFO "PATCH /api/user/users/2/ HTTP/1.1" 200 243
+INFO "GET /api/user/users/?telegram_id=5652442685 HTTP/1.1" 200 295
+/home/bobomurod/Django/Bot/venv/lib/python3.12/site-packages/rest_framework/pagination.py:207: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'apps.admin.models.Admin'> QuerySet.
+  paginator = self.django_paginator_class(queryset, page_size)
+INFO "GET /api/admin/admins/ HTTP/1.1" 200 447
+INFO "GET /api/user/users/5/ HTTP/1.1" 200 233
+INFO "GET /api/ticket/tickets/my-tickets/?admin_id=1&date_filter=today HTTP/1.1" 200 2
+INFO "GET /api/user/users/7/ HTTP/1.1" 200 226
+INFO "GET /api/ticket/tickets/my-tickets/?admin_id=3&date_filter=today HTTP/1.1" 200 2
+INFO "GET /api/user/users/?telegram_id=5652442685 HTTP/1.1" 200 295
+INFO "GET /api/admin/categories/?lang=ru HTTP/1.1" 200 561
+INFO "GET /api/ticket/tickets/ HTTP/1.1" 200 7228
+/home/bobomurod/Django/Bot/venv/lib/python3.12/site-packages/rest_framework/pagination.py:207: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'apps.admin.models.AdminCategory'> QuerySet.
+  paginator = self.django_paginator_class(queryset, page_size)
+INFO "GET /api/admin/admin-categories/ HTTP/1.1" 200 307
+INFO "GET /api/admin/admin-categories/ HTTP/1.1" 200 307
+INFO "GET /api/admin/admin-categories/ HTTP/1.1" 200 307
+INFO "GET /api/user/users/?telegram_id=5652442685 HTTP/1.1" 200 295
+INFO "GET /api/ticket/tickets/ HTTP/1.1" 200 7228
+INFO "GET /api/admin/categories/?lang=ru HTTP/1.1" 200 561
+INFO "GET /api/admin/admins/ HTTP/1.1" 200 447
+INFO "GET /api/user/users/?telegram_id=5652442685 HTTP/1.1" 200 295
+INFO "GET /api/ticket/tickets/ HTTP/1.1" 200 7228
+INFO "GET /api/admin/admins/ HTTP/1.1" 200 447
+INFO "GET /api/user/users/ HTTP/1.1" 200 1902
+INFO "GET /api/admin/categories/?lang=ru HTTP/1.1" 200 561
+INFO "GET /api/user/users/?telegram_id=5652442685 HTTP/1.1" 200 295
+INFO "GET /api/ticket/tickets/ HTTP/1.1" 200 7228
+INFO "GET /api/admin/categories/?lang=ru HTTP/1.1" 200 561
+INFO "GET /api/admin/admins/ HTTP/1.1" 200 447
+INFO "GET /api/user/users/?telegram_id=5652442685 HTTP/1.1" 200 295
+INFO "GET /api/user/users/?telegram_id=5652442685 HTTP/1.1" 200 295
+INFO "GET /api/user/users/?telegram_id=5652442685 HTTP/1.1" 200 295
+INFO "PATCH /api/user/users/2/ HTTP/1.1" 200 243
+INFO "GET /api/user/users/?telegram_id=5652442685 HTTP/1.1" 200 295
+INFO "GET /api/user/users/?telegram_id=5652442685 HTTP/1.1" 200 295
+INFO "GET /api/ticket/tickets/ HTTP/1.1" 200 7228
+INFO "GET /api/admin/categories/?lang=uz HTTP/1.1" 200 511
+INFO "GET /api/admin/admins/ HTTP/1.1" 200 447
+INFO "GET /api/user/users/?telegram_id=5652442685 HTTP/1.1" 200 295
+INFO "GET /api/user/users/?telegram_id=5652442685 HTTP/1.1" 200 295
+INFO "GET /api/user/users/?telegram_id=5652442685 HTTP/1.1" 200 295
+INFO "GET /api/user/users/?telegram_id=5652442685 HTTP/1.1" 200 295
+INFO "GET /api/user/users/?telegram_id=5652442685 HTTP/1.1" 200 295
+INFO "GET /api/user/users/?telegram_id=5652442685 HTTP/1.1" 200 295
+INFO "GET /api/ticket/tickets/ HTTP/1.1" 200 7228
+INFO "GET /api/admin/admins/ HTTP/1.1" 200 447
+INFO "GET /api/user/users/ HTTP/1.1" 200 1902
+INFO "GET /api/admin/categories/?lang=uz HTTP/1.1" 200 511

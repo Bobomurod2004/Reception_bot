@@ -1,31 +1,35 @@
-# TEST REJIMI UCHUN .env FAYL NAMUNASI
-# Bu faylni .env ga nusxalang va o'z ma'lumotlaringiz bilan to'ldiring
+# =============================================================================
+# LOCAL TEST CONFIGURATION (SQLite, Polling)
+# =============================================================================
 
-# =============================================================================
-# TELEGRAM BOT SOZLAMALARI (MAJBURIY)
-# =============================================================================
+# Telegram Bot Token (BotFather dan olinadi)
 BOT_TOKEN=PASTE_YOUR_BOT_TOKEN_HERE
+
+# Bot mode: polling for local testing
+BOT_MODE=polling
+
+# Django API URL (local development uchun)
 DJANGO_API_URL=http://localhost:8000/api
+
+# API Token
 API_TOKEN=test_api_token_2024
 
-# =============================================================================
-# ADMIN SOZLAMALARI (MAJBURIY)
-# =============================================================================
+# Super Admin Telegram ID-lari
 SUPER_ADMIN_IDS=PASTE_YOUR_TELEGRAM_ID_HERE
 
-# =============================================================================
-# DJANGO SOZLAMALARI
-# =============================================================================
+# Logging
+LOG_LEVEL=INFO
+LOG_DIR=logs
+
+# Django settings
 SECRET_KEY=django-insecure-test-key-change-this-in-production
 DEBUG=True
 ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0
 
-# =============================================================================
-# DATABASE SOZLAMALARI (SQLite - test uchun)
-# =============================================================================
+# SQLite for local testing
 USE_SQLITE=True
 
-# =============================================================================
-# LOGGING
-# =============================================================================
-LOG_LEVEL=INFO
+# API Client settings
+API_TIMEOUT=30
+API_MAX_RETRIES=3
+API_RETRY_DELAY=1.0

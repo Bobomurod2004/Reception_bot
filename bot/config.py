@@ -15,6 +15,16 @@ SUPER_ADMIN_IDS = [
 
 # Logging
 LOG_LEVEL = os.getenv('LOG_LEVEL', 'INFO')
+LOG_DIR = os.getenv('LOG_DIR', 'logs')
+
+# Webhook konfiguratsiyasi (production uchun)
+WEBHOOK_HOST = os.getenv('WEBHOOK_HOST', '')  # https://yourdomain.com
+WEBHOOK_PATH = os.getenv('WEBHOOK_PATH', '/webhook')
+WEBHOOK_URL = f"{WEBHOOK_HOST}{WEBHOOK_PATH}" if WEBHOOK_HOST else None
+WEBHOOK_SECRET = os.getenv('WEBHOOK_SECRET', '')  # Webhook secret key
+
+# Bot mode: 'polling' yoki 'webhook'
+BOT_MODE = os.getenv('BOT_MODE', 'polling').lower()
 
 # Database
 DATABASE_URL = os.getenv('DATABASE_URL', 'postgresql://user:pass@localhost/dbname')
@@ -28,3 +38,8 @@ ALLOWED_FILE_TYPES = [
     'application/pdf', 'application/msword',
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
 ]
+
+# API Client settings
+API_TIMEOUT = int(os.getenv('API_TIMEOUT', '30'))
+API_MAX_RETRIES = int(os.getenv('API_MAX_RETRIES', '3'))
+API_RETRY_DELAY = float(os.getenv('API_RETRY_DELAY', '1.0'))

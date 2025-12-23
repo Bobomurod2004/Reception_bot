@@ -1,8 +1,10 @@
 FROM python:3.12-slim
 
 # Set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1
 
 # Set work directory
 WORKDIR /app
@@ -13,17 +15,20 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
      libpq-dev \
      gettext \
      netcat-openbsd \
+     curl \
      && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Install dependencies
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# Install Python dependencies
+COPY requirements.txt bot_requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt && \
+    pip install --no-cache-dir -r bot_requirements.txt
 
 # Copy project
 COPY . .
 
-# Create scripts directory if it doesn't exist and make scripts executable
-RUN chmod +x scripts/*.sh
+# Create necessary directories
+RUN mkdir -p /app/logs /app/staticfiles /app/media && \
+    chmod +x scripts/*.sh
 
 # Default command (will be overridden by docker-compose)
 CMD ["bash"]

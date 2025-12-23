@@ -82,23 +82,32 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': os.getenv('DB_ENGINE', 'django.db.backends.postgresql'),
-        'NAME': os.getenv('DB_NAME', 'support_bot_db'),
-        'USER': os.getenv('DB_USER', 'postgres'),
-        'PASSWORD': os.getenv('DB_PASSWORD', 'password'),
-        'HOST': os.getenv('DB_HOST', 'localhost'),
-        'PORT': os.getenv('DB_PORT', '5432'),
-    }
-}
+# Production: Always use PostgreSQL
+# SQLite only for local development/testing if explicitly set
+USE_SQLITE = os.getenv('USE_SQLITE', 'False').lower() == 'true'
 
-# SQLite uchun (test rejimi)
-if os.getenv('USE_SQLITE', 'False').lower() == 'true':
+if USE_SQLITE:
+    # SQLite (only for local development/testing)
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+else:
+    # PostgreSQL (production default)
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.getenv('DB_NAME', 'support_bot_db'),
+            'USER': os.getenv('DB_USER', 'postgres'),
+            'PASSWORD': os.getenv('DB_PASSWORD', 'password'),
+            'HOST': os.getenv('DB_HOST', 'localhost'),
+            'PORT': os.getenv('DB_PORT', '5432'),
+            'CONN_MAX_AGE': 600,  # Connection pooling
+            'OPTIONS': {
+                'connect_timeout': 10,
+            }
         }
     }
 
@@ -172,7 +181,7 @@ API_TOKEN = os.getenv('API_TOKEN', 'your-api-token-change-this')
 # CORS sozlamalari (agar kerak bo'lsa)
 CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS', '').split(',') if os.getenv('CORS_ALLOWED_ORIGINS') else []
 
-# Logging sozlamalari
+# Logging sozlamalari (production-ready with rotation)
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -189,12 +198,15 @@ LOGGING = {
     'handlers': {
         'file': {
             'level': 'INFO',
-            'class': 'logging.FileHandler',
-            'filename': os.path.join(BASE_DIR, 'django.log'),
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(BASE_DIR, 'logs', 'django.log'),
+            'maxBytes': 10 * 1024 * 1024,  # 10MB
+            'backupCount': 5,
             'formatter': 'verbose',
+            'encoding': 'utf-8',
         },
         'console': {
-            'level': 'DEBUG',
+            'level': 'INFO' if not DEBUG else 'DEBUG',
             'class': 'logging.StreamHandler',
             'formatter': 'simple',
         },
@@ -203,7 +215,23 @@ LOGGING = {
         'handlers': ['console', 'file'],
         'level': 'INFO',
     },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'django.request': {
+            'handlers': ['console', 'file'],
+            'level': 'WARNING',
+            'propagate': False,
+        },
+    },
 }
+
+# Create logs directory
+import pathlib
+pathlib.Path(os.path.join(BASE_DIR, 'logs')).mkdir(exist_ok=True)
 
 # Email sozlamalari (ixtiyoriy)
 if os.getenv('EMAIL_HOST'):
